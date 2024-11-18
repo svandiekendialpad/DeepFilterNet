@@ -25,19 +25,19 @@ include = [
 [tool.poetry.dependencies]
 deepfilterlib = { path = "../pyDF/" }
 deepfilterdataloader = { path = "../pyDF-data/", optional = true }
-python = ">=3.8,<4.0"
-numpy = ">=1.22,<2.0"
-loguru = ">=0.5"
-appdirs = "^1.4"
-requests = "^2.27"
-packaging = ">=23,<25"
-sympy = ">=1.6"
-soundfile = { version = ">=0.10,<0.13", optional = true }
+python = ">=3.11,<4.0"
+appdirs = ">=1.4,<2.0"
 icecream = { version = ">=2,<3", optional = true }
-pystoi = { version = ">=0.3,<0.5", optional = true }
+loguru = ">=0.5,<1.0"
+numpy = ">=2.0,<3.0"
+onnxruntime = { version = ">=1.15,<2.0.0", optional = true }
+packaging = ">=23,<25"
 pesq = { version = ">=0.0.3,<0.0.5", optional = true }
-scipy = { version = "^1", optional = true }
-onnxruntime = { version = "^1.15", optional = true }
+pystoi = { version = ">=0.3,<0.5", optional = true }
+requests = ">=2.27,<3.0"
+scipy = { version = ">=1.0.0,<2.0.0", optional = true }
+soundfile = { version = ">=0.10,<0.13", optional = true }
+sympy = ">=1.6,<2.0"
 
 [tool.poetry.extras]
 train = ["deepfilterdataloader", "icecream"]
@@ -50,7 +50,7 @@ deepFilter = "df.enhance:run"
 deep-filter-py = "df.enhance:run"
 
 [tool.poetry.dev-dependencies]
-poethepoet = "^0.26"
+poethepoet = ">=0.26,<1.0"
 
 [tool.poe.tasks]
 install-torch-cuda11 = "pip install torch==2.1+cu118 torchaudio==2.1 --extra-index-url https://download.pytorch.org/whl/cu118"
